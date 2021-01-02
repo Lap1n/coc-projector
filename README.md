@@ -1,5 +1,7 @@
 # Project Manager for Neovim
 
+## UNSTABLE - Currently in development - Use at you own risk!
+
 project.nvim is a Neovim plugin written in Lua that adds support for project management
 
 ## Features

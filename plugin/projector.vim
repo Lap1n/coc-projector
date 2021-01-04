@@ -6,12 +6,12 @@ set cpo&vim " reset them to defaults
 
 
 " command to run our plugin
-lua require'project'.init()
-command! PSearch lua require'project'.select_project()
-command! PAdd lua require'project'.add_project()
-command! PCache lua require'project'.open_cache_file()
-command! PClear lua require'project'.clear_projects()
-command! PSaveSession lua require'project'.save_session()
+lua require'projector'.init()
+command! PSearch lua require'projector'.select_project()
+command! PAdd lua require'projector'.add_project()
+command! PCache lua require'projector'.open_cache_file()
+command! PClear lua require'projector'.clear_projects()
+command! PSaveSession lua require'projector'.save_session()
 let &cpo = s:save_cpo " and restore after
 unlet s:save_cpo
 

@@ -1,8 +1,10 @@
-# Project Manager for Neovim
+# Projector.nvim : Project Manager for Neovim
 
 ## UNSTABLE - Currently in development - Use at you own risk!
 
-project.nvim is a Neovim plugin written in Lua that adds support for project management
+Projector.nvim is a Neovim plugin written in Lua that adds support for project management.
+
+The main inspiration of this project comes from the excellent [Projectile](https://github.com/bbatsov/projectile "Projectile plugin") for emacs.
 
 ## Features
 
@@ -23,3 +25,7 @@ project.nvim is a Neovim plugin written in Lua that adds support for project man
 ## Configuration
 
 ## Usage
+
+## TODOs
+
+- Better session management

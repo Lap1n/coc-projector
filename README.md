@@ -1,31 +1,21 @@
-# Projector.nvim : Project Manager for Neovim
+# projector
 
-## UNSTABLE - Currently in development - Use at you own risk!
+## Install
 
-Projector.nvim is a Neovim plugin written in Lua that adds support for project management.
+`:CocInstall projector`
 
-The main inspiration of this project comes from the excellent [Projectile](https://github.com/bbatsov/projectile "Projectile plugin") for emacs.
+## Keymaps
 
-## Features
+`nmap <silent> <C-l> <Plug>(coc-projector-keymap)`
 
-#### Project selection
+## Lists
 
-- Select and load a project session from a configured list (require FZF)
-- Add a specific project to a internal list
-- Automatically detect project root when adding a new project
+`:CocList demo_list`
 
-#### Session management
+## License
 
-- Automatically save and load project session on quit and when switching projects
+MIT
 
-## Requirements
+---
 
-- [fzf](https://github.com/junegunn/fzf.vim "fzf plugin") for the fuzzy project selection menu
-
-## Configuration
-
-## Usage
-
-## TODOs
-
-- Better session management
+> This extension is created by [create-coc-extension](https://github.com/fannheyward/create-coc-extension)

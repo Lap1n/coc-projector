@@ -60,5 +60,9 @@
         "title": "projector command title"
       }
     ]
+  },
+  "dependencies": {
+    "@types/lowdb": "^1.0.9",
+    "lowdb": "^1.0.0"
   }
 }

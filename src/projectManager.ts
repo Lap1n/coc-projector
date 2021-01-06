@@ -14,16 +14,16 @@ interface ProjectSchema {
 
 export default class ProjectManager {
   public readonly CACHE_FILE_NAME = 'projector.json';
-  // private projectDatabasePath: string;
+  private projectDatabasePath: string;
   private db: LowdbSync<DatabaseSchema>;
 
   public constructor(databaseFolderPath: string) {
     this.createDatabaseFolder(databaseFolderPath);
-    const adapter = new FileSync<DatabaseSchema>(path.join(databaseFolderPath, this.CACHE_FILE_NAME));
+    this.projectDatabasePath = path.join(databaseFolderPath, this.CACHE_FILE_NAME);
+    const adapter = new FileSync<DatabaseSchema>(this.projectDatabasePath);
     this.db = low(adapter);
     if (!this.db.has('projects').value()) {
       this.db.defaults({ projects: [] }).write();
-      workspace.showMessage('asedfasdfasdf');
     }
   }
 
@@ -48,6 +48,9 @@ export default class ProjectManager {
     projects.remove({ path: projectRootPath }).write();
   }
 
+  public openDatabaseFile(): void {
+    workspace.nvim.command(`e ${this.projectDatabasePath}`);
+  }
   private createDatabaseFolder(databaseFolderPath: string): void {
     fs.mkdirSync(databaseFolderPath, { recursive: true });
   }

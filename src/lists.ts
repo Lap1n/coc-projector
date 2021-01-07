@@ -1,4 +1,4 @@
-import { BasicList, events, ListAction, ListContext, ListItem, Neovim, workspace } from 'coc.nvim';
+import { BasicList, ListAction, ListContext, ListItem, Neovim, workspace } from 'coc.nvim';
 import ProjectManager from './projectManager';
 import SessionManager from './sessionManager';
 
@@ -22,6 +22,7 @@ export default class ProjectList extends BasicList {
       if (sessionManager.sessionExist(directory)) {
         await sessionManager.loadSession(directory);
       } else if (await workspace.nvim.eval('exists("*fzf#run")')) {
+        //TODO: add support for other fuzzy finders
         let fzfParams = await workspace.nvim.call('fzf#wrap', {
           source: 'git ls-files',
           sink: 'e',

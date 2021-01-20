@@ -1,4 +1,4 @@
-# coc-projector : A Project Manager for coc.nvim
+# coc-projector : A Project Manager for Vim/Neovim
 
 Project manager extension for [coc.nvim](https://github.com/neoclide/coc.nvim 'coc.nvim')
 

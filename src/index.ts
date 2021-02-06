@@ -45,9 +45,16 @@ export async function activate(context: ExtensionContext): Promise<void> {
 
   context.subscriptions.push(
     workspace.registerAutocmd({
-      event: ['QuitPre', 'BufWritePost'],
+      event: ['BufWritePost'],
       request: false,
       callback: sessionManager.saveCurrentSession,
+    })
+  );
+  context.subscriptions.push(
+    workspace.registerAutocmd({
+      event: ['QuitPre'],
+      request: false,
+      callback: sessionManager.onQuit,
     })
   );
 

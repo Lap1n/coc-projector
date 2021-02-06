@@ -31,9 +31,17 @@ export default class SessionManager {
     workspace.showMessage(`Saving session to ${session_file_path}`);
   };
 
+  public onQuit = async () => {
+    this.closeReadOnlyBuffers();
+    this.saveCurrentSession();
+  };
   public saveCurrentSession = async () => {
     let cwd = String(await workspace.nvim.eval('getcwd()'));
     this.saveSession(cwd);
+  };
+
+  private closeReadOnlyBuffers = async () => {
+    await workspace.nvim.command("exe 'bd '.join(filter(range(1, bufnr('$')), {i,v -> getbufvar(v, '&l:ro') == 1}))");
   };
 
   private getSessionFilePath(rootDir: string): string {

@@ -32,7 +32,7 @@ export default class SessionManager {
   };
 
   public onQuit = async () => {
-    this.closeReadOnlyBuffers();
+    // this.closeReadOnlyBuffers();
     this.saveCurrentSession();
   };
   public saveCurrentSession = async () => {
@@ -40,7 +40,8 @@ export default class SessionManager {
     this.saveSession(cwd);
   };
 
-  private closeReadOnlyBuffers = async () => {
+  //TODO: THIS DOES NOT WORK YET
+  public closeReadOnlyBuffers = async () => {
     await workspace.nvim.command("exe 'bd '.join(filter(range(1, bufnr('$')), {i,v -> getbufvar(v, '&l:ro') == 1}))");
   };
 

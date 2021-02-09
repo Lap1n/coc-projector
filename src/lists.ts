@@ -16,7 +16,12 @@ export default class ProjectList extends BasicList {
       if (directory == cwd) {
         return;
       }
-      await workspace.nvim.command('bufdo bwipeout');
+      // if (sessionManager.sessionExist(cwd)) {
+      // await sessionManager.closeReadOnlyBuffers();
+      // await sessionManager.saveCurrentSession();
+      // }
+      workspace.showMessage(directory);
+      await workspace.nvim.command('bufdo! bwipeout');
       await workspace.nvim.command(`cd ${directory}`);
 
       if (sessionManager.sessionExist(directory)) {

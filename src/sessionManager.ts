@@ -1,4 +1,4 @@
-import { OutputChannel, workspace } from 'coc.nvim';
+import { workspace } from 'coc.nvim';
 import { existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 

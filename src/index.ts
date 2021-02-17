@@ -1,4 +1,4 @@
-import { commands, CompleteResult, ExtensionContext, listManager, sources, workspace } from 'coc.nvim';
+import { commands, ExtensionContext, listManager, workspace } from 'coc.nvim';
 import ProjectList from './lists';
 import ProjectManager from './projectManager';
 import * as path from 'path';
